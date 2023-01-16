@@ -9,17 +9,40 @@
     <script type="application/javascript" src="/js/validationCommon.js"></script>
     <script type="application/javascript" src="/js/validationJobOfferForm.js"></script>
     <script type="application/javascript" src="/js/validationRecruitmentForm.js"></script>
+
+
 </head>
 <body>
 <header>
+    <% if(!loggedUser) { %>
+        <div id="login">
+            <h5>Login</h5>
+            <form method="post" action="/login" novalidate>
+                <label for="loginEmail">Email:</label>
+                <input type="email" id="loginEmail" name="email">
+
+                <label for="loginPassword">Password:</label>
+                <input type="password" id="loginPassword" name="password">
+
+                <input type="submit" value="Log in">
+                <span id="loginErrors"><%= loginError ? loginError : ''%></span>
+            </form>
+        </div>
+    <% } else { %>
+        <span>You are logged in as: <%= loggedUser.name + " " + loggedUser.surname%></span>
+        <a href="/logout">Log out</a>
+    <% } %>
+
     <h1>Job Finder</h1>
     <img src="/images/logo.png" alt="Job Finder Logo">
 </header>
 <nav>
     <ul>
+        <% if(loggedUser) { %>
         <li><a href="/" class="<%= navLocation === 'main' ? 'active' : '' %>">Main Page</a></li>
         <li><a href="/accounts" class="<%= navLocation === 'acc' ? 'active' : '' %>">Accounts</a></li>
         <li><a href="/job-offers" class="<%= navLocation === 'job' ? 'active' : '' %>">Job Offers</a></li>
         <li><a href="/recruitments" class="<%= navLocation === 'rec' ? 'active' : '' %>">Recruitment</a></li>
+        <% } %>
     </ul>
 </nav>

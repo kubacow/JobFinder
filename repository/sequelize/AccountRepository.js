@@ -48,3 +48,9 @@ exports.deleteAccount = (accId) => {
         where: {_id: accId}
     });
 };
+
+exports.findByEmail = (email) => {
+    return Account.findOne({
+        where: {email: email}
+    });
+}
