@@ -1,4 +1,4 @@
-const Sequelize = require('sequelize');
+    const Sequelize = require('sequelize');
 const sequelize = require('../../config/sequelize/sequelize');
 const {now} = require("sequelize/lib/utils");
 const Account = sequelize.define('Account', {
@@ -14,11 +14,11 @@ const Account = sequelize.define('Account', {
         unique: true,
         validate: {
             notEmpty: {
-                msg: "Field cannot be empty!"
+                msg: "error.emptyString"
             },
             len: {
                 args: [2, 60],
-                msg: "Field should contain from 2 to 60 characters!"
+                msg: "error.stringLen_2_60"
             },
         }
     },
@@ -27,11 +27,12 @@ const Account = sequelize.define('Account', {
         allowNull: false,
         validate: {
             notEmpty: {
-                msg: "Field cannot be empty!"
+
+                msg: "error.emptyString"
             },
             len: {
-                args: [8, 14],
-                msg: "Field should contain from 8 to 14 characters!"
+                args: [8, 60],
+                msg: "error.stringLen_8"
             },
         }
     },
@@ -41,14 +42,14 @@ const Account = sequelize.define('Account', {
         unique: true,
         validate: {
             notEmpty: {
-                msg: "Field cannot be empty!"
+                msg: "error.emptyString"
             },
             isEmail: {
-                msg: "Field must contain email!"
+                msg: "error.notEmail"
             },
             len: {
                 args: [5, 60],
-                msg: "Field should contain from 5 to 60 characters!"
+                msg: "error.stringLen_5_60"
             },
 
         }
@@ -58,11 +59,11 @@ const Account = sequelize.define('Account', {
         allowNull: false,
         validate: {
             notEmpty: {
-                msg: "Field cannot be empty!"
+                msg: "error.emptyString"
             },
             len: {
                 args: [2, 60],
-                msg: "Field should contain from 2 to 60 characters!"
+                msg: "error.stringLen_2_60"
             },
         }
     },
@@ -71,11 +72,11 @@ const Account = sequelize.define('Account', {
         allowNull: false,
         validate: {
             notEmpty: {
-                msg: "Field cannot be empty!"
+                msg: "error.emptyString"
             },
             len: {
                 args: [2, 60],
-                msg: "Field should contain from 2 to 60 characters!"
+                msg: "error.stringLen_2_60"
             },
         }
     },
@@ -84,11 +85,11 @@ const Account = sequelize.define('Account', {
         allowNull: false,
         validate: {
             notEmpty: {
-                msg: "Field cannot be empty!"
+                msg: "error.emptyString"
             },
             len: {
                 args: [2, 60],
-                msg: "Field should contain from 2 to 60 characters!"
+                msg: "error.stringLen_2_60"
             },
         }
     },
@@ -98,7 +99,7 @@ const Account = sequelize.define('Account', {
             isDate: true,
             isPastDate(value) {
                 if (value >= new Date()) {
-                    throw new Error('Start date must be in the past');
+                    throw new Error('error.pastDate');
                 }
             }
         }

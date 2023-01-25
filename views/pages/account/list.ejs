@@ -1,16 +1,16 @@
 <%- include('../../fragments/header.ejs') %>
 <main>
-    <h2>Accounts</h2>
+    <h2><%= __('acc.list.title') %></h2>
     <table class="table-list">
 
         <tr>
-            <th>Username</th>
-            <th>Name</th>
-            <th>Surname</th>
-            <th>Gender</th>
-            <th>E-mail</th>
-            <th>Creation Date</th>
-            <th>Options</th>
+            <th><%= __('acc.fields.username') %></th>
+            <th><%= __('acc.fields.name') %></th>
+            <th><%= __('acc.fields.surname') %></th>
+            <th><%= __('acc.fields.gender') %></th>
+            <th><%= __('acc.fields.email') %></th>
+            <th><%= __('acc.fields.creation-date') %></th>
+            <th><%= __('acc.list.options') %></th>
         </tr>
 
 
@@ -26,13 +26,13 @@
                 <td>
                     <ul class="list-actions">
                         <li>
-                            <a href="/accounts/details/<%= acc._id%>" class="list-actions-button-details">Details</a>
+                            <a href="/accounts/details/<%= acc._id%>" class="list-actions-button-details"><%= __('list.actions.details') %></a>
                         </li>
                         <li>
-                            <a href="/accounts/edit/<%= acc._id%>" class="list-actions-button-edit">Edit</a>
+                            <a href="/accounts/edit/<%= acc._id%>" class="list-actions-button-edit"><%= __('list.actions.edit')%></a>
                         </li>
                         <li>
-                            <a href="/accounts/delete/<%= acc._id%>" class="list-actions-button-delete">Delete</a>
+                            <a href="/accounts/delete/<%= acc._id%>" class="list-actions-button-delete"><%= __('list.actions.delete')%></a>
                         </li>
                     </ul>
                 </td>
@@ -43,7 +43,7 @@
     </table>
 
     <p>
-        <a href="/accounts/add" class="button-add">Add new account</a>
+        <a href="/accounts/add" class="button-add"><%= __('acc.list.addNew')%></a>
     </p>
 </main>
 <%- include('../../fragments/footer.ejs') %>

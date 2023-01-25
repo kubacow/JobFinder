@@ -1,15 +1,15 @@
 
 <%- include('../../fragments/header.ejs') %>
 <main>
-    <h2>Recruitments</h2>
+    <h2><%= __('rec.list.title')%></h2>
     <table class="table-list">
 
         <tr>
-            <th>Username</th>
-            <th>Company Name</th>
-            <th>Status</th>
-            <th>Date Opened</th>
-            <th>Options</th>
+            <th><%= __('acc.fields.username')%></th>
+            <th><%= __('job.fields.company-name')%></th>
+            <th><%= __('rec.fields.status')%></th>
+            <th><%= __('rec.fields.date-opened')%></th>
+            <th><%= __('rec.list.options')%></th>
         </tr>
 
 
@@ -23,13 +23,13 @@
                 <td>
                     <ul class="list-actions">
                         <li>
-                            <a href="/recruitments/details/<%= rec._id%>" class="list-actions-button-details">Details</a>
+                            <a href="/recruitments/details/<%= rec._id%>" class="list-actions-button-details"><%= __('list.actions.details')%></a>
                         </li>
                         <li>
-                            <a href="/recruitments/edit/<%= rec._id%>" class="list-actions-button-edit">Edit</a>
+                            <a href="/recruitments/edit/<%= rec._id%>" class="list-actions-button-edit"><%= __('list.actions.edit')%></a>
                         </li>
                         <li>
-                            <a href="/recruitments/delete/<%= rec._id%>" class="list-actions-button-delete">Delete</a>
+                            <a href="/recruitments/delete/<%= rec._id%>" class="list-actions-button-delete"><%= __('list.actions.delete')%></a>
                         </li>
                     </ul>
                 </td>
@@ -40,7 +40,7 @@
     </table>
 
     <p>
-        <a href="/recruitments/add" class="button-add">Add recruitment</a>
+        <a href="/recruitments/add" class="button-add"><%= __('rec.list.addNew')%></a>
     </p>
 </main>
 <%- include('../../fragments/footer.ejs') %>

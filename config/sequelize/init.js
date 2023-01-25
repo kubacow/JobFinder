@@ -5,7 +5,7 @@ const JobOffer = require('../../model/sequelize/JobOffer');
 const Recruitment = require('../../model/sequelize/Recruitment');
 
 const authUtil = require('../../util/authUtils');
-const passHash = authUtil.hashPassword('12345')
+const passHash = authUtil.hashPassword('12345');
 module.exports = () => {
     Account.hasMany(Recruitment, {as: 'recruitments', foreignKey: {name: 'acc_id', allowNull: false}, constraints: true, onDelete: 'CASCADE'});
     Recruitment.belongsTo(Account, {as: 'account', foreignKey: {name: 'acc_id', allowNull: false}});
@@ -23,7 +23,7 @@ module.exports = () => {
                 return Account.bulkCreate([
                 {
                     username: 'Kubaa',
-                    password: passHash,
+                    password: authUtil.hashPassword('kubakuba'),
                     email: 'kuba@gmail.com',
                     name: 'Kuba',
                     surname: 'Kowalski',
@@ -32,7 +32,7 @@ module.exports = () => {
                 },
                 {
                     username: 'Jakubb',
-                    password: passHash,
+                    password: authUtil.hashPassword('jakubjakub'),
                     email: 'jakub@gmail.com',
                     name: 'Jakub',
                     surname: 'Kowal',

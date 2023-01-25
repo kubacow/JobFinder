@@ -1,6 +1,9 @@
 var express = require('express');
 var router = express.Router();
 const AuthController = require('../controllers/authController');
+const LangController = require('../controllers/LangController');
+
+router.get('/changeLang/:lang', LangController.changeLang);
 router.post('/login', AuthController.login);
 router.get('/logout', AuthController.logout);
 

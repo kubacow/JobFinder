@@ -14,9 +14,9 @@ exports.showJobOfferList = (req, res, next) => {
 exports.showAddJobOfferForm = (req, res, next) => {
     res.render('pages/job_offers/form', {
         job: {},
-        pageTitle: 'New job',
+        pageTitle: req.__('job.form.add.pageTitle'),
         formMode: 'createNew',
-        btnLabel: 'Add',
+        btnLabel: req.__('form.actions.add'),
         formAction: '/job-offers/add',
         navLocation: 'job',
         buttonCSS: 'submit',
@@ -31,7 +31,7 @@ exports.showJobOfferDetails = (req, res, next) => {
             res.render('pages/job_offers/form', {
                 job: job,
                 formMode: 'showDetails',
-                pageTitle: 'Job details',
+                pageTitle: req.__('job.form.details.pageTitle'),
                 formAction: '',
                 navLocation: 'job',
                 buttonCSS: 'edit',
@@ -47,8 +47,8 @@ exports.showJobOfferEdit = (req, res, next) => {
             res.render('pages/job_offers/form', {
                 job: job,
                 formMode: 'edit',
-                pageTitle: 'Edit job',
-                btnLabel: 'Edit',
+                pageTitle: req.__('job.form.edit.pageTitle'),
+                btnLabel: req.__('form.actions.edit'),
                 formAction: '/job-offers/edit',
                 navLocation: 'job',
                 buttonCSS: 'edit',

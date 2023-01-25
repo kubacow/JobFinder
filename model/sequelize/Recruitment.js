@@ -13,7 +13,7 @@ const Recruitment = sequelize.define('Recruitment', {
         allowNull: false,
         validate: {
             notEmpty: {
-                msg: "Field is required!"
+                msg: "error.emptyString"
             },
         }
     },
@@ -22,11 +22,11 @@ const Recruitment = sequelize.define('Recruitment', {
         allowNull: false,
         validate: {
             notEmpty: {
-                msg: "Field is required!"
+                msg: "error.emptyString"
             },
             len: {
                 args: [2, 60],
-                msg: "Field should contain from 2 to 60 characters!"
+                msg: "error.stringLen_2_60"
             }
         }
     },

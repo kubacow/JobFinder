@@ -5,16 +5,22 @@
     <script type="application/javascript" src="/js/validationCommon.js"></script>
     <script type="application/javascript" src="/js/validationRecruitmentForm.js"></script>
     <h2><%= pageTitle %></h2>
-    <form class="form" method="post" action="<%= formAction%>" novalidate onsubmit="return validateForm();">
+    <form class="form" method="post" action="<%= formAction%>" onsubmit="return validateForm();" novalidate >
+        <div style="display: none">
+            <span id="errorMessage-required"><%= __('validation-message.field-required') %></span>
+            <span id="errorMessage-2-60"><%= __('validation-message.field-2-60') %></span>
+            <span id="errorMessage-dateFormat"><%= __('validation-message.field-dateFormat') %></span>
+            <span id="errorMessage-datePast"><%= __('validation-message.field-datePast') %></span>
+        </div>
 
         <input type="hidden" name="_id" value="<%= rec._id %>"/>
 
-        <label for="acc_id">Account: <span class="symbol-required">*</span></label>
+        <label for="acc_id"><%= __('nav.accounts')%>: <span class="symbol-required">*</span></label>
         <select class="<%= validationErrors.find(e => e.path.includes('acc_id')) ? 'error-input' : '' %>"
                 name="acc_id" id="acc_id" required
                 <%= (formMode === 'showDetails') ? 'disabled' : '' %>>
             <% if (formMode !== 'edit' ){ %>
-                <option value="" selected="selected">--select account--</option>
+                <option value="" selected="selected"><%= __('placeholders.account')%></option>
             <% } %>
             <% for (let i = 0; i < allAccs.length; i++) { let acc = allAccs[i]; %>
             <option value="<%= acc._id %>" label="<%= acc.username%>"
@@ -24,16 +30,16 @@
         </select>
         <span id="errorAccId" class="errors-text">
             <% if(validationErrors.find(e => e.path.includes('acc_id'))){ %>
-                <%= validationErrors.find(e => e.path.includes('acc_id')).message %>
+                <%= __(validationErrors.find(e => e.path.includes('acc_id')).message) %>
             <% } %>
         </span>
 
-        <label for="job_id">Job offer: <span class="symbol-required">*</span></label>
+        <label for="job_id"><%= __('nav.job-offers')%>: <span class="symbol-required">*</span></label>
         <select class="<%= validationErrors.find(e => e.path.includes('job_id')) ? 'error-input' : '' %>"
                 name="job_id" id="job_id" required
                 <%= (formMode === 'showDetails') ? 'disabled' : '' %>>
             <% if (formMode !== 'edit' ){ %>
-                <option value="" selected="selected">--select job offer--</option>
+                <option value="" selected="selected"><%= __('placeholders.job-offer')%></option>
             <% } %>
             <% for (let i = 0; i < allJobs.length; i++) { let job = allJobs[i]; %>
             <option value="<%= job._id %>" label="<%= job.companyName + ' (' + job.position + ')'%>"
@@ -43,36 +49,36 @@
         </select>
         <span id="errorJobId" class="errors-text">
             <% if(validationErrors.find(e => e.path.includes('job_id'))){ %>
-                <%= validationErrors.find(e => e.path.includes('job_id')).message %>
+                <%= __(validationErrors.find(e => e.path.includes('job_id')).message) %>
             <% } %>
         </span>
 
-        <label for="status">Status:</label>
+        <label for="status"><%= __('rec.fields.status')%>:</label>
         <input class="<%= validationErrors.find(e => e.path.includes('status')) ? 'error-input' : '' %>"
                type="text" name="status" id="status" value="<%= rec.status %>"
                 <%= (formMode === 'showDetails') ? 'disabled' : ''%>/>
         <span id="errorStatus" class="errors-text">
             <% if(validationErrors.find(e => e.path.includes('status'))){ %>
-                <%= validationErrors.find(e => e.path.includes('status')).message %>
+                <%= __(validationErrors.find(e => e.path.includes('status')).message) %>
             <% } %>
         </span>
 
-        <label for="dateOpened">Date Opened: <span class="symbol-required">*</span></label>
+        <label for="dateOpened"><%= __('rec.fields.date-opened')%>: <span class="symbol-required">*</span></label>
         <input class="<%= validationErrors.find(e => e.path.includes('dateOpened')) ? 'error-input' : '' %>"
                type="date" name="dateOpened" id="dateOpened" value="<%= rec.dateOpened ? new Date(rec.dateOpened).toISOString().split('T')[0] : new Date().toISOString().split('T')[0] %>"
                 <%= (formMode === 'showDetails') ? 'disabled' : ''%>/>
         <span id="errorDateOpened" class="errors-text">
             <% if(validationErrors.find(e => e.path.includes('dateOpened'))){ %>
-                <%= validationErrors.find(e => e.path.includes('dateOpened')).message %>
+                <%= __(validationErrors.find(e => e.path.includes('dateOpened')).message) %>
             <% } %>
         </span>
 
-        <label for="notes">Notes:</label>
+        <label for="notes"><%= __('rec.fields.notes')%>:</label>
         <textarea class="<%= validationErrors.find(e => e.path.includes('notes')) ? 'error-input' : '' %>"
                   id="notes" name="notes" rows="5" cols="40" <%= (formMode === 'showDetails') ? 'disabled' : '' %>><%= rec.notes%></textarea>
         <span id="errorNotes" class="errors-text">
             <% if(validationErrors.find(e => e.path.includes('notes'))){ %>
-                <%= validationErrors.find(e => e.path.includes('notes')).message %>
+                <%= __(validationErrors.find(e => e.path.includes('notes')).message) %>
             <% } %>
         </span>
 
@@ -83,16 +89,16 @@
 
         <% if (formMode === 'showDetails') { %>
             <div class="form-buttons">
-                <a href="/recruitments/edit/<%= rec._id %> " class="button-edit">Edit</a>
+                <a href="/recruitments/edit/<%= rec._id %> " class="button-edit"><%= __('list.actions.edit')%></a>
             </div>
         <% } %>
         <div class="form-buttons">
             <span class="errors-text" id="errorsSummary"></span>
             <% if (formMode !== 'showDetails') { %>
                 <input class="form-button-submit" type="submit" value="<%= btnLabel %>"/>
-                <a class="form-button-cancel" href="/recruitments">Cancel</a>
+                <a class="form-button-cancel" href="/recruitments"><%= __('form.actions.cancel')%></a>
             <% } else { %>
-                <a class="form-button-cancel" href="/recruitments">Return</a>
+                <a class="form-button-cancel" href="/recruitments"><%= __('form.actions.return')%></a>
             <% } %>
         </div>
     </form>
@@ -100,16 +106,16 @@
     <% if (formMode === 'showDetails' || formMode === 'edit') { %>
 
 
-        <h2>Account</h2>
+        <h2><%= __('nav.accounts')%></h2>
 
         <table class="table-list">
             <thead>
             <tr>
-                <th>Username</th>
-                <th>Name</th>
-                <th>Surname</th>
-                <th>Email</th>
-                <th>Options</th>
+                <th><%= __('acc.fields.username')%></th>
+                <th><%= __('acc.fields.name')%></th>
+                <th><%= __('acc.fields.surname')%></th>
+                <th><%= __('acc.fields.email')%></th>
+                <th><%= __('acc.list.options')%></th>
             </tr>
             </thead>
             <tbody>
@@ -122,11 +128,11 @@
                     <ul class="list-actions">
                         <li>
                             <a href="/accounts/details/<%= rec.account._id %>"
-                               class="list-actions-button-details">Details</a>
+                               class="list-actions-button-details"><%= __('list.actions.details')%></a>
                         </li>
                         <li>
                             <a href="/accounts/delete/<%= rec.account._id %>" class="list-actions-button-delete"
-                               onclick="return confirm('Are you sure?')">Delete</a>
+                               onclick="return confirm('Are you sure?')"><%= __('list.actions.delete')%></a>
                         </li>
                     </ul>
                 </td>
@@ -135,17 +141,17 @@
 
             </tbody>
         </table>
-        <h2>Job Offer</h2>
+        <h2><%= __('nav.job-offers')%></h2>
 
         <table class="table-list">
             <thead>
             <tr>
-                <th>Company Name</th>
-                <th>Position</th>
-                <th>Location</th>
-                <th>Min Salary</th>
-                <th>Max Salary</th>
-                <th>Options</th>
+                <th><%= __('job.fields.company-name')%></th>
+                <th><%= __('job.fields.position')%></th>
+                <th><%= __('job.fields.location')%></th>
+                <th><%= __('job.fields.min-sal')%></th>
+                <th><%= __('job.fields.max-sal')%></th>
+                <th><%= __('job.list.options')%></th>
             </tr>
             </thead>
             <tbody>
@@ -159,11 +165,11 @@
                     <ul class="list-actions">
                         <li>
                             <a href="/job-offers/details/<%= rec.jobOffer._id %>"
-                               class="list-actions-button-details">Details</a>
+                               class="list-actions-button-details"><%= __('list.actions.details')%></a>
                         </li>
                         <li>
                             <a href="/job-offers/delete/<%= rec.jobOffer._id %>" class="list-actions-button-delete"
-                               onclick="return confirm('Are you sure?')">Delete</a>
+                               onclick="return confirm('Are you sure?')"><%= __('list.actions.delete')%></a>
                         </li>
                     </ul>
                 </td>

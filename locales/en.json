@@ -1,0 +1,182 @@
+{
+	"main-page": {
+		"content": "Main Page",
+		"text": "This Job Application helps you find jobs across multiple fields of work. Search through jobs and add them to your library. Remember to make an account first."
+	},
+	"login-bar": {
+		"info": "You are logged in as: ",
+		"log-out": "Log out"
+	},
+	"nav": {
+		"main-page": "Main page",
+		"accounts": "Accounts",
+		"job-offers": "Job Offers",
+		"recruitments": "Recruitments"
+	},
+	"list": {
+		"actions": {
+			"title": "Actions",
+			"details": "Details",
+			"edit": "Edit",
+			"delete": "Delete"
+		}
+	},
+	"form": {
+		"actions": {
+			"return": "Return",
+			"edit": "Edit",
+			"cancel": "Cancel",
+			"add": "Add"
+		}
+	},
+	"acc": {
+		"fields": {
+			"username": "Username",
+			"name": "Name",
+			"surname": "Surname",
+			"email": "Email",
+			"creation-date": "Creation Date",
+			"gender": "Gender",
+			"password": "Password"
+		},
+		"list": {
+			"title": "Accounts",
+			"addNew": "Add new account",
+			"noData": "No accounts in database",
+			"pageTitle": "List of accounts",
+			"options": "Options"
+		},
+		"form": {
+			"recruitment": "History of recruitment",
+			"add": {
+				"pageTitle": "Adding a new account",
+				"btnLabel": "Add the account",
+				"confirm": {
+					"header": "Confirmation",
+					"text": "The new account has been successfully created"
+				}
+			},
+			"edit": {
+				"pageTitle": "Editing an account",
+				"btnLabel": "Save changes",
+				"confirm": {
+					"header": "Confirmation",
+					"text": "The account has been successfully updated"
+				}
+			},
+			"details": {
+				"pageTitle": "Account details",
+				"confirm": {
+					"header": "Confirmation",
+					"text": "The account has been successfully updated"
+				}
+			}
+		}
+	},
+	"job": {
+		"fields": {
+			"company-name": "Company Name",
+			"position": "Position",
+			"location": "Location",
+			"min-sal": "Minimum salary (PLN)",
+			"max-sal": "Maximum salary (PLN)",
+			"description": "Description"
+		},
+		"list": {
+			"title": "Job Offers",
+			"addNew": "Add new job offer",
+			"noData": "No job offers in database",
+			"pageTitle": "List of job offers",
+			"options": "Options"
+		},
+		"form": {
+			"recruitment": "History of recruitment",
+			"add": {
+				"pageTitle": "Adding a new job offer",
+				"btnLabel": "Add the job offer",
+				"confirm": {
+					"header": "Confirmation",
+					"text": "The new job offer has been successfully created"
+				}
+			},
+			"edit": {
+				"pageTitle": "Editing a job offer",
+				"btnLabel": "Save changes",
+				"confirm": {
+					"header": "Confirmation",
+					"text": "The job offer has been successfully updated"
+				}
+			},
+			"details": {
+				"pageTitle": "Job offer details",
+				"confirm": {
+					"header": "Confirmation",
+					"text": "The job offer has been successfully updated"
+				}
+			}
+		}
+	},
+	"rec": {
+		"fields": {
+			"date-opened": "Date Opened",
+			"status": "Status",
+			"notes": "Notes"
+		},
+		"list": {
+			"title": "Recruitments",
+			"addNew": "Add new recruitment",
+			"noData": "No recruitments in database",
+			"pageTitle": "List of recruitments",
+			"options": "Options"
+		},
+		"form": {
+			"recruitment": "",
+			"add": {
+				"pageTitle": "Adding a new job offer",
+				"btnLabel": "Add the job offer",
+				"confirm": {
+					"header": "Confirmation",
+					"text": "The new job offer has been successfully created"
+				}
+			},
+			"edit": {
+				"pageTitle": "Editing a recruitments",
+				"btnLabel": "Save changes",
+				"confirm": {
+					"header": "Confirmation",
+					"text": "The recruitment has been successfully updated"
+				}
+			},
+			"details": {
+				"pageTitle": "Recruitment details",
+				"confirm": {
+					"header": "Confirmation",
+					"text": "The recruitment has been successfully updated"
+				}
+			}
+		}
+	},
+	"validation-message": {
+		"field-required": "Field is required!",
+		"field-2-60": "Field should have 2 to 60 characters!",
+		"field-8": "Field should contain at least 8 characters!",
+		"field-5-60": "Field should have 5 to 60 characters!",
+		"field-email": "Field should contain an email!",
+		"field-dateFormat": "Field should be a date!",
+		"field-datePast": "Start date must be in the past!",
+		"field-max-sal": "Maximum salary cannot be lower then minimum!"
+	},
+	"error": {
+		"emptyString": "Field cannot be empty!",
+		"stringLen_2_60": "Field should contain from 2 to 60 characters!",
+		"stringLen_5_60": "Field should contain from 5 to 60 characters!",
+		"stringLen_8": "Field should contain at least 8 characters!",
+		"notEmail": "Field should contain an email!",
+		"pastDate": "Start date must be in the past!"
+	},
+	"Validation isDate on creationDate failed": "Field should be a date!",
+	"placeholders" : {
+		"account" : "--select account--",
+		"job-offer" : "--select job offer--"
+	}
+}

@@ -14,23 +14,28 @@
 </head>
 <body>
 <header>
+    <ul>
+        <li><a href="/changeLang/pl" class="<%= lang === 'pl' ? 'active' : ''%>">Polski</a></li>
+        <li><a href="/changeLang/en" class="<%= lang === 'en' ? 'active' : ''%>">English</a></li>
+        <li><a href="/changeLang/es" class="<%= lang === 'es' ? 'active' : ''%>">Español</a></li>
+    </ul>
     <% if(!loggedUser) { %>
         <div id="login">
             <h5>Login</h5>
             <form method="post" action="/login" novalidate>
-                <label for="loginEmail">Email:</label>
-                <input type="email" id="loginEmail" name="email">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email">
 
-                <label for="loginPassword">Password:</label>
-                <input type="password" id="loginPassword" name="password">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password">
 
                 <input type="submit" value="Log in">
                 <span id="loginErrors"><%= loginError ? loginError : ''%></span>
             </form>
         </div>
     <% } else { %>
-        <span>You are logged in as: <%= loggedUser.name + " " + loggedUser.surname%></span>
-        <a href="/logout">Log out</a>
+        <span><%= __('login-bar.info')%><%= loggedUser.name + " " + loggedUser.surname%></span>
+        <a href="/logout"><%= __('login-bar.log-out')%></a>
     <% } %>
 
     <h1>Job Finder</h1>
@@ -39,10 +44,10 @@
 <nav>
     <ul>
         <% if(loggedUser) { %>
-        <li><a href="/" class="<%= navLocation === 'main' ? 'active' : '' %>">Main Page</a></li>
-        <li><a href="/accounts" class="<%= navLocation === 'acc' ? 'active' : '' %>">Accounts</a></li>
-        <li><a href="/job-offers" class="<%= navLocation === 'job' ? 'active' : '' %>">Job Offers</a></li>
-        <li><a href="/recruitments" class="<%= navLocation === 'rec' ? 'active' : '' %>">Recruitment</a></li>
+        <li><a href="/" class="<%= navLocation === 'main' ? 'active' : '' %>"><%= __('nav.main-page')%></a></li>
+        <li><a href="/accounts" class="<%= navLocation === 'acc' ? 'active' : '' %>"><%= __('nav.accounts')%></a></li>
+        <li><a href="/job-offers" class="<%= navLocation === 'job' ? 'active' : '' %>"><%= __('nav.job-offers')%></a></li>
+        <li><a href="/recruitments" class="<%= navLocation === 'rec' ? 'active' : '' %>"><%= __('nav.recruitments')%></a></li>
         <% } %>
     </ul>
 </nav>

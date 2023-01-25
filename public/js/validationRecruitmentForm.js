@@ -22,37 +22,42 @@ function validateForm() {
     resetErrors([recUsernameInput, companyRecNameInput, statusInput, dateOpenedInput, notesInput],
         [errorRecUsername, errorCompanyRecName, errorStatus, errorStatus, errorDateOpened, errorNotes], errorsSummary)
 
+    const reqMessage = document.getElementById('errorMessage-required').innerText;
+    const reqLenMessage = document.getElementById('errorMessage-2-60').innerText;
+    const reqDateFormat = document.getElementById('errorMessage-dateFormat').innerText;
+    const reqDatePast = document.getElementById('errorMessage-datePast').innerText;
+
     let valid = true;
 
     if(!checkRequired(recUsernameInput.value)) {
         valid = false;
         recUsernameInput.classList.add("error-input");
-        errorRecUsername.innerText = "Field required!";
+        errorRecUsername.innerText = reqMessage;
     } if(recUsernameInput.value === "0") {
         valid = false;
         recUsernameInput.classList.add("error-input");
-        errorRecUsername.innerText = "Field required!";
+        errorRecUsername.innerText = reqMessage;
     }
 
     if(!checkRequired(companyRecNameInput.value)) {
         valid = false;
         companyRecNameInput.classList.add("error-input");
-        errorCompanyRecName.innerText = "Field required!";
+        errorCompanyRecName.innerText = reqMessage;
     } else if(companyRecNameInput.value === "0") {
         valid = false;
         companyRecNameInput.classList.add("error-input");
-        errorCompanyRecName.innerText = "Field required!";
+        errorCompanyRecName.innerText = reqMessage;
     }
 
     if(!checkRequired(statusInput.value)) {
         valid = false;
         statusInput.classList.add("error-input");
-        errorStatus.innerText = "Field required!";
+        errorStatus.innerText = reqMessage;
     }
     else if (!checkTextLengthRange(statusInput.value, 2, 60)) {
         valid = false;
         statusInput.classList.add("error-input");
-        errorStatus.innerText = "Field should have 2 to 60 characters";
+        errorStatus.innerText = reqLenMessage;
     }
 
     let nowDate = new Date(),
@@ -69,15 +74,15 @@ function validateForm() {
     if(!checkRequired(dateOpenedInput.value)) {
         valid = false;
         dateOpenedInput.classList.add("error-input");
-        errorDateOpened.innerText = "Field required!"
+        errorDateOpened.innerText = reqMessage
     } else if (!checkDate(dateOpenedInput.value)) {
         valid = false;
         dateOpenedInput.classList.add("error-input");
-        errorDateOpened.innerText = "Input should be a date in correct format (yyyy-mm-dd)!"
+        errorDateOpened.innerText = reqDateFormat
     } else if (checkDateIfAfter(dateOpenedInput.value, nowString)) {
         valid = false;
         dateOpenedInput.classList.add("error-input");
-        errorDateOpened.innerText = "Date cannot be in the future!";
+        errorDateOpened.innerText = reqDatePast;
     }
 
     if(!valid) {

@@ -1,0 +1,187 @@
+{
+	"main-page": {
+		"content": "Página principal",
+		"text": "Esta aplicación de trabajo te ayuda a encontrar trabajos en varios campos laborales. Busca trabajos y agrégalos a tu biblioteca. Recuerda hacer una cuenta primero."
+	},
+	"login-bar": {
+		"info": "Estás conectado como: ",
+		"log-out": "Cerrar sesión"
+	},
+	"nav": {
+		"main-page": "Página principal",
+		"accounts": "Cuentas",
+		"job-offers": "Ofertas de trabajo",
+		"recruitments": "Reclutamientos"
+	},
+	"list": {
+		"actions": {
+			"title": "Acciones",
+			"details": "Detalles",
+			"edit": "Editar",
+			"delete": "Eliminar"
+		}
+	},
+	"form": {
+		"actions": {
+			"return": "Regresar",
+			"edit": "Editar",
+			"cancel": "Cancelar",
+			"add": "Añadir"
+		}
+	},
+	"acc": {
+		"fields": {
+			"username": "Nombre de usuario",
+			"name": "Nombre",
+			"surname": "Apellido",
+			"email": "Correo electrónico",
+			"creation-date": "Fecha de creación",
+			"gender": "Género",
+			"password": "Contraseña"
+		},
+		"list": {
+			"title": "Cuentas",
+			"addNew": "Añadir nueva cuenta",
+			"noData": "No hay cuentas en la base de datos",
+			"pageTitle": "Lista de cuentas",
+			"options": "Opciones"
+		},
+		"form": {
+			"recruitment": "Historial de reclutamiento",
+			"add": {
+				"pageTitle": "Añadiendo una nueva cuenta",
+				"btnLabel": "Añadir la cuenta",
+				"confirm": {
+					"header": "Confirmación",
+					"text": "La nueva cuenta ha sido creada con éxito"
+				}
+			},
+			"edit": {
+				"pageTitle": "Editando una cuenta",
+				"btnLabel": "Guardar cambios",
+				"confirm": {
+					"header": "Confirmación",
+					"text": "La cuenta ha sido actual izada con éxito"
+				}
+			},
+			"details": {
+				"pageTitle": "Detalles de la cuenta",
+				"confirm": {
+					"header": "Confirmación",
+					"text": "La cuenta ha sido actualizada con éxito"
+				}
+			}
+		}
+	},
+	"job": {
+		"fields": {
+			"company-name": "Nombre de la empresa",
+			"position": "Posición",
+			"location": "Ubicación",
+			"min-sal": "Salario mínimo (PLN)",
+			"max-sal": "Salario máximo (PLN)",
+			"description": "Descripción"
+		},
+		"list": {
+			"title": "Ofertas de trabajo",
+			"addNew": "Añadir nueva oferta de trabajo",
+			"noData": "No hay ofertas de trabajo en la base de datos",
+			"pageTitle": "Lista de ofertas de trabajo",
+			"options": "Opciones"
+		},
+		"form": {
+			"recruitment": "Historial de reclutamiento",
+			"add": {
+				"pageTitle": "Añadiendo una nueva oferta de trabajo",
+				"btnLabel": "Añadir la oferta de trabajo",
+				"confirm": {
+					"header": "Confirmación",
+					"text": "La nueva oferta de trabajo ha sido creada con éxito"
+				}
+			},
+			"edit": {
+				"pageTitle": "Editando una oferta de trabajo",
+				"btnLabel": "Guardar cambios",
+				"confirm": {
+					"header": "Confirmación",
+					"text": "La oferta de trabajo ha sido actualizada con éxito"
+				}
+			},
+			"details": {
+				"pageTitle": "Detalles de la oferta de trabajo",
+				"confirm": {
+					"header": "Confirmación",
+					"text": "La oferta de trabajo ha sido actualizada con éxito"
+				}
+			}
+		}
+	},
+	"rec": {
+		"fields": {
+			"date-opened": "Fecha de apertura",
+			"status": "Estatus",
+			"notes": "Notas"
+		},
+		"list": {
+			"title": "Reclutamientos",
+			"addNew": "Añadir nuevo reclutamiento",
+			"noData": "No hay reclutamientos en la base de datos",
+			"pageTitle": "Lista de reclutamientos",
+			"options": "Opciones"
+		},
+		"form": {
+			"recruitment": "",
+			"add": {
+				"pageTitle": "Añadiendo una nueva oferta de trabajo",
+				"btnLabel": "Añadir la oferta de trabajo",
+				"confirm": {
+					"header": "Confirmación",
+					"text": "La nueva oferta de trabajo ha sido creada con éxito"
+				}
+			},
+			"edit": {
+				"pageTitle": "Editando un reclutamiento",
+				"btnLabel": "Guardar cambios",
+				"confirm": {
+					"header": "Confirmación",
+					"text": "El reclutamiento ha sido actualizado con éxito"
+				}
+			},
+			"details": {
+				"pageTitle": "Detalles del reclutamiento",
+				"confirm": {
+					"header": "Confirmación",
+					"text": "El reclutamiento ha sido actualizado con éxito"
+				}
+			}
+		}
+	},
+	"validation-message": {
+		"field-required": "¡El campo es requerido!",
+		"field-2-60": "¡El campo debe tener de 2 a 60 caracteres!",
+		"field-8": "¡El campo debe contener al menos 8 caracteres!",
+		"field-5-60": "¡El campo debe tener de 5 a 60 caracteres!",
+		"field-email": "¡El campo debe contener un correo electrónico!",
+		"field-dateFormat": "¡El campo debe ser una fecha!",
+		"field-datePast": "¡La fecha de inicio debe estar en el pasado!",
+		"field-max-sal": "¡El salario máximo no puede ser menor que el mínimo!"
+	},
+	"error": {
+		"emptyString": "¡El campo no puede estar vacío!",
+		"stringLen_2_60": "¡El campo debe contener de 2 a 60 caracteres!",
+		"stringLen_5_60": "¡El campo debe contener de 5 a 60 caracteres!",
+		"stringLen_8": "¡El campo debe contener al menos 8 caracteres!",
+		"notEmail": "¡El campo debe contener un correo electrónico!",
+		"pastDate": "¡La fecha de inicio debe estar en el pasado!"
+	},
+	"Validation isDate on creationDate failed": "¡El campo debe ser una fecha!",
+	"Field should contain less than 255 characters!": "El campo no debe contener menos de 255 caracteres!",
+	"placeholders": {
+		"account": "--seleccionar cuenta--",
+		"job-offer": "--seleccionar oferta de trabajo--"
+	},
+	"Recruitment": {
+		"acc_id cannot be null": "Recruitment.acc_id no puede ser nulo.",
+		"job_id cannot be null": "Recruitment.job_id no puede ser nulo."
+	}
+}

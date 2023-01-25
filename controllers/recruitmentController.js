@@ -26,8 +26,8 @@ exports.showAddRecruitmentForm = (req, res, next) => {
                 formMode: 'createNew',
                 allAccs: allAccs,
                 allJobs: allJobs,
-                pageTitle: 'New Recruitment',
-                btnLabel: 'Add',
+                pageTitle: req.__('rec.form.add.pageTitle'),
+                btnLabel: req.__('form.actions.add'),
                 formAction: '/recruitments/add',
                 navLocation: 'rec',
                 validationErrors: []
@@ -55,7 +55,7 @@ exports.showRecruitmentDetails = (req, res, next) => {
         res.render('pages/recruitment/form', {
             rec: rec,
             formMode: 'showDetails',
-            pageTitle: 'Recruitment details',
+            pageTitle: req.__('rec.form.details.pageTitle'),
             formAction: '/recruitments/details',
             navLocation: 'rec',
             allAccs: allAccs,
@@ -86,8 +86,8 @@ exports.showRecruitmentEdit = (req, res, next) => {
         res.render('pages/recruitment/form', {
             rec: rec,
             formMode: 'edit',
-            pageTitle: 'Edit recruitment',
-            btnLabel: 'Edit',
+            pageTitle: req.__('rec.form.edit.pageTitle'),
+            btnLabel: req.__('form.actions.edit'),
             formAction: '/recruitments/edit',
             navLocation: 'rec',
             allAccs,

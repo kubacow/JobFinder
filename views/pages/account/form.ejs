@@ -6,76 +6,86 @@
 
   <form class="form" action="<%=formAction%>" novalidate onsubmit="return validateForm()" method="post">
 
+      <div style="display: none">
+          <span id="errorMessage-required"><%= __('validation-message.field-required') %></span>
+          <span id="errorMessage-2-60"><%= __('validation-message.field-2-60') %></span>
+          <span id="errorMessage-8"><%= __('validation-message.field-8') %></span>
+          <span id="errorMessage-5-60"><%= __('validation-message.field-5-60') %></span>
+          <span id="errorMessage-email"><%= __('validation-message.field-email') %></span>
+          <span id="errorMessage-dateFormat"><%= __('validation-message.field-dateFormat') %></span>
+          <span id="errorMessage-datePast"><%= __('validation-message.field-datePast') %></span>
+      </div>
+
       <input type="hidden" name="_id" value="<%= acc._id %>">
 
-      <label for="username">Username: <span class="symbol-required">*</span></label>
+      <label for="username"><%= __('acc.fields.username')%>: <span class="symbol-required">*</span></label>
       <input class="<%= validationErrors.find(e => e.path.includes('username')) ? 'error-input' : '' %>"
              type="text" name="username" id="username" placeholder="2-60 characters" value="<%= acc.username %>"
              <%= (formMode === 'showDetails') ? 'disabled' : '' %> required/>
       <span id="errorUsername" class="errors-text">
-          <% if(validationErrors.find(e => e.path.includes('username'))){ %>
-              <%= validationErrors.find(e => e.path.includes('username')).message %>
+          <% if(validationErrors && validationErrors.find(e => e.path.includes('username'))){ %>
+              <%= __(validationErrors.find(e => e.path.includes('username')).message) %>
           <% } %>
       </span>
 
-      <label for="name">Name: <span class="symbol-required">*</span></label>
+      <label for="name"><%= __('acc.fields.name')%>: <span class="symbol-required">*</span></label>
       <input class="<%= validationErrors.find(e => e.path.includes('name')) ? 'error-input' : '' %>"
              type="text" name="name" id="name" placeholder="2-60 characters" value="<%= acc.name %>"
             <%= (formMode === 'showDetails') ? 'disabled' : '' %> required/>
       <span id="errorName" class="errors-text">
           <% if(validationErrors.find(e => e.path.includes('name'))){ %>
-              <%= validationErrors.find(e => e.path.includes('name')).message %>
+              <%= __(validationErrors.find(e => e.path.includes('name')).message) %>
           <% } %>
       </span>
 
-      <label for="surname">Surname: <span class="symbol-required">*</span></label>
+      <label for="surname"><%= __('acc.fields.surname')%>: <span class="symbol-required">*</span></label>
       <input class="<%= validationErrors.find(e => e.path.includes('surname')) ? 'error-input' : '' %>"
              type="text" name="surname" id="surname" placeholder="2-60 characters" value="<%= acc.surname %>"
             <%= (formMode === 'showDetails') ? 'disabled' : '' %> required/>
       <span id="errorSurname" class="errors-text">
           <% if(validationErrors.find(e => e.path.includes('surname'))){ %>
-              <%= validationErrors.find(e => e.path.includes('surname')).message %>
+              <%= __(validationErrors.find(e => e.path.includes('surname')).message) %>
           <% } %></span>
 
-      <label for="gender">Gender: <span class="symbol-required">*</span></label>
+      <label for="gender"><%= __('acc.fields.gender')%>: <span class="symbol-required">*</span></label>
       <input class="<%= validationErrors.find(e => e.path.includes('gender')) ? 'error-input' : '' %>"
              type="text" name="gender" id="gender" placeholder="2-60 characters" value="<%= acc.gender%>"
             <%= (formMode === 'showDetails') ? 'disabled' : '' %> required/>
       <span id="errorGender" class="errors-text">
           <% if(validationErrors.find(e => e.path.includes('gender'))){ %>
-              <%= validationErrors.find(e => e.path.includes('gender')).message %>
+              <%= __(validationErrors.find(e => e.path.includes('gender')).message) %>
           <% } %>
       </span>
 
 
 
-      <label for="password">Password: <span class="symbol-required">*</span></label>
+      <label for="password"><%= __('acc.fields.password')%>: <span class="symbol-required">*</span></label>
       <input class="<%= validationErrors.find(e => e.path.includes('password')) ? 'error-input' : '' %>"
-             type="text" name="password" id="password" placeholder="8-14 characters" value="<%= acc.password %>"
+             type="password" name="password" id="password" placeholder="8-14 characters" value="<%= acc.password %>"
             <%= (formMode === 'showDetails') ? 'disabled' : '' %> required/>
       <span id="errorPassword" class="errors-text">
           <% if(validationErrors.find(e => e.path.includes('password'))){ %>
-              <%= validationErrors.find(e => e.path.includes('password')).message %>
+              <%= __(validationErrors.find(e => e.path.includes('password')).message) %>
           <% } %>
       </span>
 
-      <label for="email">E-mail: <span class="symbol-required">*</span></label>
+      <label for="email"><%= __('acc.fields.email')%>: <span class="symbol-required">*</span></label>
       <input class="<%= validationErrors.find(e => e.path.includes('email')) ? 'error-input' : '' %>"
              type="email" name="email" id="email" placeholder="ex. name@domain.com" value="<%= acc.email%>"
             <%= (formMode === 'showDetails') ? 'disabled' : ''%> required/>
       <span id="errorEmail" class="errors-text">
           <% if(validationErrors.find(e => e.path.includes('email'))){ %>
-              <%= validationErrors.find(e => e.path.includes('email')).message %>
+              <%= __(validationErrors.find(e => e.path.includes('email')).message) %>
           <% } %>
       </span>
 
-      <label for="creationDate">Date Created: <span class="symbol-required">*</span></label>
+      <label for="creationDate"><%= __('acc.fields.creation-date')%>: <span class="symbol-required">*</span></label>
       <input class="<%= validationErrors.find(e => e.path.includes('creationDate')) ? 'error-input' : '' %>"
              type="date" name="creationDate" id="creationDate" value="<%= acc.creationDate ? new Date(acc.creationDate).toISOString().split('T')[0] : new Date().toISOString().split('T')[0] %>"
               <%= (formMode === 'showDetails') ? 'disabled' : ''%> required/>
       <span id="errorCreationDate" class="errors-text">
           <% if(validationErrors.find(e => e.path.includes('creationDate'))){ %>
-              <%= validationErrors.find(e => e.path.includes('creationDate')).message %>
+              <%= __(validationErrors.find(e => e.path.includes('creationDate')).message) %>
           <% } %>
       </span>
 
@@ -87,31 +97,31 @@
       <p class="errors-text" id="errorsSummary"></p>
       <% if (formMode === 'showDetails') { %>
           <div class="form-buttons">
-              <a href="/accounts/edit/<%= acc._id %> " class="button-edit">Edit</a>
+              <a href="/accounts/edit/<%= acc._id %> " class="button-edit"><%= __('form.actions.edit')%></a>
           </div>
       <% } %>
       <div class="form-buttons">
           <% if (formMode !== 'showDetails') { %>
               <input class="form-button-submit" type="submit" value="<%= btnLabel %>"/>
-              <a class="form-button-cancel" href="/accounts">Cancel</a>
+              <a class="form-button-cancel" href="/accounts"><%= __('form.actions.cancel')%></a>
           <% } else { %>
-              <a class="form-button-cancel" href="/accounts">Return</a>
+              <a class="form-button-cancel" href="/accounts"><%= __('form.actions.return')%></a>
           <% } %>
       </div>
   </form>
     <% if (formMode === 'showDetails' || formMode === 'edit') { %>
 
 
-        <h2>Recruitments</h2>
+        <h2><%= __('rec.list.title')%></h2>
 
         <table class="table-list">
             <thead>
             <tr>
-                <th>Company Name</th>
-                <th>Status</th>
-                <th>Date Opened</th>
-                <th>Notes</th>
-                <th>Options</th>
+                <th><%= __('job.fields.company-name')%></th>
+                <th><%= __('rec.fields.status')%></th>
+                <th><%= __('rec.fields.date-opened')%></th>
+                <th><%= __('rec.fields.notes')%></th>
+                <th><%= __('job.list.options')%></th>
             </tr>
             </thead>
             <tbody>
@@ -125,11 +135,11 @@
                         <ul class="list-actions">
                             <li>
                                 <a href="/recruitments/details/<%= recruitment._id %>"
-                                   class="list-actions-button-details">Details</a>
+                                   class="list-actions-button-details"><%= __('list.actions.details')%></a>
                             </li>
                             <li>
                                 <a href="/recruitments/delete/<%= recruitment._id %>" class="list-actions-button-delete"
-                                   onclick="return confirm('Are you sure?')">Delete</a>
+                                   onclick="return confirm('Are you sure?')"><%= __('list.actions.delete')%></a>
                             </li>
                         </ul>
                     </td>

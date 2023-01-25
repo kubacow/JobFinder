@@ -13,9 +13,9 @@ exports.showAccountList = (req, res, next) => {
 exports.showAddAccountForm = (req, res, next) => {
     res.render('pages/account/form', {
         acc: {},
-        pageTitle: 'New account',
+        pageTitle: req.__('acc.form.add.pageTitle'),
         formMode: 'createNew',
-        btnLabel: 'Add',
+        btnLabel: req.__('form.actions.add'),
         formAction: '/accounts/add',
         navLocation: 'acc',
         validationErrors: []
@@ -29,7 +29,7 @@ exports.showAccountDetails = (req, res, next) => {
             res.render('pages/account/form', {
                 acc: acc,
                 formMode: 'showDetails',
-                pageTitle: 'Account details',
+                pageTitle: req.__('acc.form.details.pageTitle'),
                 formAction: '',
                 navLocation: 'acc',
                 validationErrors: []
@@ -44,8 +44,8 @@ exports.showAccountEdit = (req, res, next) => {
             res.render('pages/account/form', {
                 acc: acc,
                 formMode: 'edit',
-                pageTitle: 'Edit account',
-                btnLabel: 'Edit',
+                pageTitle: req.__('acc.form.edit.pageTitle'),
+                btnLabel: req.__('form.actions.edit'),
                 formAction: '/accounts/edit',
                 navLocation: 'acc',
                 validationErrors: []
@@ -69,9 +69,9 @@ exports.addAccount = (req, res, next) => {
         })
         res.render('pages/account/form', {
             acc: accData,
-            pageTitle: 'Add account',
+            pageTitle: req.__('acc.form.add.pageTitle'),
             formMode: 'createNew',
-            btnLabel: 'Add',
+            btnLabel: req.__('form.actions.add'),
             formAction: '/accounts/add',
             navLocation: 'acc',
             buttonCSS: 'submit',
@@ -105,8 +105,8 @@ exports.updateAccount = (req, res, next) => {
         res.render('pages/account/form', {
             acc: accData,
             formMode: 'edit',
-            pageTitle: 'Edit account',
-            btnLabel: 'Edit',
+            pageTitle: req.__('acc.form.edit.pageTitle'),
+            btnLabel: req.__('form.actions.edit'),
             formAction: '/accounts/edit',
             navLocation: 'acc',
             buttonCSS: 'edit',

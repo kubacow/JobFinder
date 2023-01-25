@@ -1,15 +1,15 @@
 <%- include('../../fragments/header.ejs') %>
   <main>
-    <h2>Job Offers</h2>
+    <h2><%= __('job.list.title')%></h2>
     <table class="table-list">
 
       <tr>
-        <th>Company</th>
-        <th>Position</th>
-        <th>Location</th>
-        <th>Minimum Salary (PLN)</th>
-        <th>Maximum Salary (PLN)</th>
-        <th>Options</th>
+        <th><%= __('job.fields.company-name')%></th>
+        <th><%= __('job.fields.position')%></th>
+        <th><%= __('job.fields.location')%></th>
+        <th><%= __('job.fields.min-sal')%></th>
+        <th><%= __('job.fields.max-sal')%></th>
+        <th><%= __('job.list.options')%></th>
       </tr>
 
 
@@ -24,13 +24,13 @@
           <td>
             <ul class="list-actions">
               <li>
-                <a href="/job-offers/details/<%= job._id%>" class="list-actions-button-details">Details</a>
+                <a href="/job-offers/details/<%= job._id%>" class="list-actions-button-details"><%= __('list.actions.details')%></a>
               </li>
               <li>
-                <a href="/job-offers/edit/<%= job._id%>" class="list-actions-button-edit">Edit</a>
+                <a href="/job-offers/edit/<%= job._id%>" class="list-actions-button-edit"><%= __('list.actions.edit')%></a>
               </li>
               <li>
-                <a href="/job-offers/delete/<%= job._id%>" class="list-actions-button-delete">Delete</a>
+                <a href="/job-offers/delete/<%= job._id%>" class="list-actions-button-delete"><%= __('list.actions.delete')%></a>
               </li>
             </ul>
           </td>
@@ -41,7 +41,7 @@
     </table>
 
     <p>
-      <a href="/job-offers/add" class="button-add">Add new job offer</a>
+      <a href="/job-offers/add" class="button-add"><%= __('job.list.addNew')%></a>
     </p>
 </main>
 <%- include('../../fragments/footer.ejs') %>

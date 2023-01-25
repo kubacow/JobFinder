@@ -1,6 +1,7 @@
 const Account = require("../../model/sequelize/Account");
 const Recruitment = require("../../model/sequelize/Recruitment");
 const JobOffer = require("../../model/sequelize/JobOffer");
+const authUtil = require("../../util/authUtils")
 
 exports.getAccounts = () => {
     return Account.findAll();
@@ -23,7 +24,7 @@ exports.getAccountById = (accId) => {
 exports.createAccount = (newAccData) => {
     return Account.create({
         username: newAccData.username,
-        password: newAccData.password,
+        password: authUtil.hashPassword(newAccData.password),
         email: newAccData.email,
         name: newAccData.name,
         surname: newAccData.surname,
@@ -34,7 +35,7 @@ exports.createAccount = (newAccData) => {
 
 exports.updateAccount = (accId, accData) => {
     const username = accData.username;
-    const password = accData.password;
+    const password = authUtil.hashPassword(accData.password);
     const email = accData.email;
     const name = accData.name;
     const surname = accData.surname;

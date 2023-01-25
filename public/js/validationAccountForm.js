@@ -25,70 +25,78 @@ function validateForm() {
     resetErrors([usernameInput, nameInput, surnameInput, genderInput, emailInput, passwordInput, dateInput],
                 [errorUsername, errorName, errorSurname, errorGender, errorEmail, errorPassword, errorDate], errorsSummary);
 
+    const reqMessage = document.getElementById('errorMessage-required').innerText;
+    const reqLenMessage1 = document.getElementById('errorMessage-2-60').innerText;
+    const reqLenMessage2 = document.getElementById('errorMessage-8').innerText;
+    const reqLenMessage3 = document.getElementById('errorMessage-5-60').innerText;
+    const reqEmail = document.getElementById('errorMessage-email').innerText;
+    const reqDateFormat = document.getElementById('errorMessage-dateFormat').innerText;
+    const reqDatePast = document.getElementById('errorMessage-datePast').innerText;
+
     let valid = true;
 
     if(!checkRequired(usernameInput.value)) {
         valid = false;
         usernameInput.classList.add("error-input");
-        errorUsername.innerText = "Field required!";
+        errorUsername.innerText = reqMessage;
     } else if (!checkTextLengthRange(usernameInput.value, 2, 60)) {
         valid = false;
         usernameInput.classList.add("error-input");
-        errorUsername.innerText = "Field should have 2 to 60 characters!";
+        errorUsername.innerText = reqLenMessage1;
     }
 
     if(!checkRequired(nameInput.value)) {
         valid = false;
         nameInput.classList.add("error-input");
-        errorName.innerText = "Field required!";
+        errorName.innerText = reqMessage;
     } else if (!checkTextLengthRange(nameInput.value, 2, 60)) {
         valid = false;
         nameInput.classList.add("error-input");
-        errorName.innerText = "Field should have 2 to 60 characters!";
+        errorName.innerText = reqLenMessage1;
     }
 
     if(!checkRequired(surnameInput.value)) {
         valid = false;
         surnameInput.classList.add("error-input");
-        errorSurname.innerText = "Field required!";
+        errorSurname.innerText = reqMessage;
     } else if (!checkTextLengthRange(surnameInput.value, 2, 60)) {
         valid = false;
         surnameInput.classList.add("error-input");
-        errorSurname.innerText = "Field should have 2 to 60 characters!";
+        errorSurname.innerText = reqLenMessage1;
     }
 
     if(!checkRequired(genderInput.value)) {
         valid = false;
         genderInput.classList.add("error-input");
-        errorGender.innerText = "Field required!";
+        errorGender.innerText = reqMessage;
     } else if (!checkTextLengthRange(genderInput.value, 2, 60)) {
         valid = false;
         genderInput.classList.add("error-input");
-        errorGender.innerText = "Field should have 2 to 60 characters!";
+        errorGender.innerText = reqLenMessage1;
     }
 
     if(!checkRequired(passwordInput.value)) {
         valid = false;
         passwordInput.classList.add("error-input");
-        errorPassword.innerText = "Field required!";
-    } else if (!checkTextLengthRange(passwordInput.value, 8, 14)) {
+        errorPassword.innerText = reqMessage;
+    } else if (!checkTextLengthRange(passwordInput.value, 8, 60)) {
         valid = false;
         passwordInput.classList.add("error-input");
-        errorPassword.innerText = "Field should have 2 to 10 characters!";
+        errorPassword.innerText = reqLenMessage2;
     }
 
     if(!checkRequired(emailInput.value)) {
         valid = false;
         emailInput.classList.add("error-input");
-        errorEmail.innerText = "Field required!";
+        errorEmail.innerText = reqMessage;
     } else if (!checkTextLengthRange(emailInput.value, 5, 60)) {
         valid = false;
         emailInput.classList.add("error-input");
-        errorEmail.innerText = "Field should have 5 to 60 characters!";
+        errorEmail.innerText = reqLenMessage3;
     } else if (!checkEmail(emailInput.value)) {
         valid = false;
         emailInput.classList.add("error-input")
-        errorEmail.innerText = "Field should contain email in correct form"
+        errorEmail.innerText = reqEmail;
     }
 
     let nowDate = new Date(),
@@ -105,15 +113,15 @@ function validateForm() {
     if(!checkRequired(dateInput.value)) {
         valid = false;
         dateInput.classList.add("error-input");
-        errorDate.innerText = "Field required!"
+        errorDate.innerText = reqMessage
     } else if (!checkDate(dateInput.value)) {
         valid = false;
         dateInput.classList.add("error-input");
-        errorDate.innerText = "Input should be a date in correct format (yyyy-mm-dd)!"
+        errorDate.innerText = reqDateFormat
     } else if (checkDateIfAfter(dateInput.value, nowString)) {
         valid = false;
         dateInput.classList.add("error-input");
-        errorDate.innerText = "Date cannot be in the future!";
+        errorDate.innerText = reqDatePast;
     }
 
 

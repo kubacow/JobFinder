@@ -23,36 +23,40 @@ function validateForm() {
     resetErrors([companyInput, positionInput, locationInput, minSalaryInput, maxSalaryInput, descriptionInput],
         [errorCompanyName, errorPosition, errorLocation,  errorMinSalary, errorMaxSalary], errorsSummary);
 
+    const reqMessage = document.getElementById('errorMessage-required').innerText;
+    const reqLenMessage = document.getElementById('errorMessage-2-60').innerText;
+    const reqMaxSal = document.getElementById('errorMessage-max-sal').innerText;
+
     let valid = true;
 
     if(!checkRequired(companyInput.value)) {
         valid = false;
         companyInput.classList.add("error-input");
-        errorCompanyName.innerText = "Field required!";
+        errorCompanyName.innerText = reqMessage;
     } else if (!checkTextLengthRange(companyInput.value, 2, 60)) {
         valid = false;
         companyInput.classList.add("error-input");
-        errorCompanyName.innerText = "Field should have 2 to 60 characters!";
+        errorCompanyName.innerText = reqLenMessage;
     }
 
     if(!checkRequired(positionInput.value)) {
         valid = false;
         positionInput.classList.add("error-input");
-        errorPosition.innerText = "Field required!";
+        errorPosition.innerText = reqMessage;
     } else if (!checkTextLengthRange(positionInput.value, 2, 60)) {
         valid = false;
         positionInput.classList.add("error-input");
-        errorPosition.innerText = "Field should have 2 to 60 characters!";
+        errorPosition.innerText = reqLenMessage;
     }
 
     if(!checkRequired(locationInput.value)) {
         valid = false;
         locationInput.classList.add("error-input");
-        errorLocation.innerText = "Field required!";
+        errorLocation.innerText = reqMessage;
     } else if (!checkTextLengthRange(locationInput.value, 2, 60)) {
         valid = false;
         locationInput.classList.add("error-input");
-        errorLocation.innerText = "Field should have 2 to 60 characters!";
+        errorLocation.innerText = reqLenMessage;
     }
 
     if(checkRequired(minSalaryInput.value)) {
@@ -70,7 +74,7 @@ function validateForm() {
         } else if (!checkLargerThanMin(minSalaryInput.value, maxSalaryInput.value)) {
             valid = false;
             maxSalaryInput.classList.add("error-input");
-            errorMaxSalary.innerText = "Maximum salary cannot be lower then minimum!";
+            errorMaxSalary.innerText = reqMaxSal;
         }
     }
 

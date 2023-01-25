@@ -1,0 +1,203 @@
+{
+	"main-page": {
+		"content": "Strona główna",
+		"text": "Ta aplikacja o pracę pomaga znaleźć pracę w wielu dziedzinach pracy. Przeszukuj oferty pracy i dodaj je do swojej biblioteki. Pamiętaj, aby najpierw założyć konto."
+	},
+	"login-bar": {
+		"info": "Jesteś zalogowany jako: ",
+		"log-out": "Wyloguj"
+	},
+	"nav": {
+		"main-page": "Strona główna",
+		"accounts": "Konta",
+		"job-offers": "Oferty Pracy",
+		"recruitments": "Rekrutacje"
+	},
+	"list": {
+		"actions": {
+			"title": "Akcje",
+			"details": "Szczegóły",
+			"edit": "Edytuj",
+			"delete": "Usuń"
+		},
+		"details": "list.details"
+	},
+	"form": {
+		"actions": {
+			"return": "Powrót",
+			"edit": "Edytuj",
+			"cancel": "Anuluj",
+			"add": "Dodaj",
+			"delete": "form.actions.delete",
+			"details": "form.actions.details"
+		},
+		"action": {
+			"cancel": "form.action.cancel"
+		}
+	},
+	"acc": {
+		"fields": {
+			"username": "Nazwa użytkownika",
+			"name": "Imię",
+			"surname": "Nazwisko",
+			"email": "Email",
+			"creation-date": "Data Utworzenia",
+			"gender": "Płeć",
+			"password": "Hasło"
+		},
+		"list": {
+			"title": "Konta",
+			"addNew": "Dodaj nowe konto",
+			"noData": "Brak kont w bazie",
+			"pageTitle": "Lista kont",
+			"options": "Opcje"
+		},
+		"form": {
+			"recruitment": "Historia rekrutacji",
+			"add": {
+				"pageTitle": "Dodawanie konta",
+				"btnLabel": "Dodaj konto",
+				"confirm": {
+					"header": "Potwierdzenie operacji",
+					"text": "Pomyślnie dodano konto"
+				}
+			},
+			"edit": {
+				"pageTitle": "Edycja konta",
+				"btnLabel": "Zapisz zmiany",
+				"confirm": {
+					"header": "Potwierdzenie operacji",
+					"text": "Pomyślnie zaktualizowano konto"
+				}
+			},
+			"details": {
+				"pageTitle": "Szczegóły konta",
+				"confirm": {
+					"header": "Confirmation",
+					"text": "The account has been successfully updated"
+				}
+			}
+		}
+	},
+	"job": {
+		"fields": {
+			"company-name": "Nazwa firmy",
+			"position": "Pozycja",
+			"location": "Lokalizacja",
+			"min-sal": "Minimalna płaca (PLN)",
+			"max-sal": "Maksymalna płaca (PLN)",
+			"description": "Opis",
+			"options": "job.fields.options"
+		},
+		"list": {
+			"title": "Oferty pracy",
+			"addNew": "Dodaj nową ofertę pracy",
+			"noData": "Brak ofert pracy w bazie",
+			"pageTitle": "Lista ofert pracy",
+			"options": "Opcje"
+		},
+		"form": {
+			"recruitment": "Historia rekrutacji",
+			"add": {
+				"pageTitle": "Dodawanie nowej oferty pracy",
+				"btnLabel": "Dodaj ofertę pracy",
+				"confirm": {
+					"header": "Potwierdzenie",
+					"text": "Nowa oferta pracy została utworzona"
+				}
+			},
+			"edit": {
+				"pageTitle": "Edytowanie oferty pracy",
+				"btnLabel": "Potwierdz zmiany",
+				"confirm": {
+					"header": "Potwierdzenie",
+					"text": "Oferta pracy została zmieniona"
+				}
+			},
+			"details": {
+				"pageTitle": "Szczegóły oferty pracy",
+				"confirm": {
+					"header": "Potwierdzenie",
+					"text": "Oferta pracy została zmieniona"
+				}
+			},
+			"cancel": "job.form.cancel"
+		},
+		"details": {
+			"pageTitle": "job.details.pageTitle"
+		}
+	},
+	"rec": {
+		"fields": {
+			"date-opened": "Data otwarcia",
+			"status": "Status",
+			"notes": "Notatki",
+			"company-name": "rec.fields.company-name",
+			"position": "rec.fields.position",
+			"location": "rec.fields.location",
+			"min-sal": "rec.fields.min-sal",
+			"max-sal": "rec.fields.max-sal"
+		},
+		"list": {
+			"title": "Rekrutacje",
+			"addNew": "Dodaj nową rekrutacje",
+			"noData": "Brak rekrutacji w bazie",
+			"pageTitle": "Lista rekrutacji",
+			"options": "Opcje"
+		},
+		"form": {
+			"recruitment": "Historia rekrutacji",
+			"add": {
+				"pageTitle": "Dodawanie nowej rekrutacji",
+				"btnLabel": "Dodaj rekrutacje",
+				"confirm": {
+					"header": "Potwierdzenie",
+					"text": "Nowa oferta pracy została utworzona"
+				}
+			},
+			"edit": {
+				"pageTitle": "Edytowanie rekrutacji",
+				"btnLabel": "Potwierdz zmiany",
+				"confirm": {
+					"header": "Potwierdzenie",
+					"text": "Rekrutacja została zmieniona"
+				}
+			},
+			"details": {
+				"pageTitle": "Szczegóły rekrutacji",
+				"confirm": {
+					"header": "Potwierdzenie",
+					"text": "Rekrutacja została zmieniona"
+				}
+			},
+			"cancel": "job.form.cancel"
+		},
+		"details": {
+			"pageTitle": "job.details.pageTitle"
+		}
+	},
+	"validation-message": {
+		"field-required": "Pole jest wymagane!",
+		"field-2-60": "Pole powinno zawierać od 2 do 60 znaków!",
+		"field-8": "Pole powinno zawierać min. 8 znaków!",
+		"field-5-60": "Pole powinno zawierać od 5 do 60 znaków!",
+		"field-email": "Pole powinno mieć format mailowy!",
+		"field-dateFormat": "Pole nie jest datą",
+		"field-datePast": "Data musi być w przeszłości!",
+		"field-max-sal": "Maksymalna płaca musi być większa od minimalnej!"
+	},
+	"error": {
+		"emptyString": "Pole nie może być puste!",
+		"stringLen_2_60": "Pole powinno zawierać od 2 do 60 znaków!",
+		"stringLen_5_60": "Pole powinno zawierać od 5 do 60 znaków!",
+		"stringLen_8": "Pole powinno zawierać min. 8 znaków!",
+		"notEmail": "Pole powinno mieć format mailowy!",
+		"pastDate": "Data musi być w przeszłości!"
+	},
+	"Validation isDate on creationDate failed": "Pole nie jest datą",
+	"Field should contain less than 255 characters!": "Pole powinno zawierać mniej niż 255 znaków!",
+    "placeholders" : {
+		"account" : "--wybierz konto--",
+		"job-offer" : "--wybierz ofertę pracy--"
+    }
+}
