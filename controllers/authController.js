@@ -10,7 +10,7 @@ exports.login = (req, res, next) => {
             if(!acc) {
                 res.require('index', {
                     navLocation: '',
-                    loginError: "Wrong email address or password."
+                    loginError: req.__('login-bar.error')
                 })
             } else if(authUtil.comparePasswords(password, acc.password) === true) {
                 req.session.loggedUser = acc;
@@ -18,7 +18,7 @@ exports.login = (req, res, next) => {
             } else {
                 res.render('index', {
                     navLocation: '',
-                    loginError: "Wrong email address or password."
+                    loginError: req.__('login-bar.error')
                 })
             }
         })
